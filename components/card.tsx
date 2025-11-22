@@ -1,6 +1,6 @@
-import { getImageUrl } from '@/utils';
-import Image from 'next/image';
-import Link from 'next/link';
+import { getImageUrl } from "@/utils";
+import Image from "next/image";
+import Link from "next/link";
 
 interface CardProps {
   id: number;
@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({
               className="rounded-t"
               sizes="100vw"
               style={{
-                objectFit: 'cover',
+                objectFit: "cover",
               }}
             />
           </div>

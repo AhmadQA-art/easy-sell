@@ -1,19 +1,19 @@
-import Card from '@/components/card';
-import { createClient } from '@/supabase/client';
-import { notFound } from 'next/navigation';
+import Card from "@/components/card";
+import { createClient } from "@/supabase/client";
+import { notFound } from "next/navigation";
 
 export const revalidate = 0;
 
 export default async function Home() {
   const supabase = createClient();
-  const { data: products } = await supabase.from('easysell-products').select();
+  const { data: products } = await supabase.from("easysell-products").select();
 
   console.log({ products });
 
   const { data: topProducts } = await supabase
-    .from('easysell-products')
+    .from("easysell-products")
     .select()
-    .is('boost', true);
+    .is("boost", true);
 
   if (!products) {
     return notFound();
